@@ -1,0 +1,18 @@
+pipeline {
+    
+    agent any 
+    
+    stages {
+
+        stage('Build Docker'){
+            steps{
+                script{
+                    sh '''
+                    echo 'Buid Docker Image'
+                    docker build -t todo-app .
+                    '''
+                }
+            }
+        }
+    }
+}
